@@ -1,0 +1,2334 @@
+slip 1
+
+Q1. Write a javascript code to reverse a given number (Handle onClick event) [15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse Number</title>
+</head>
+<body>
+
+  <h2>Reverse a Number</h2>
+  <input type="number" id="numberInput" placeholder="Enter a number" />
+  <button onclick="reverseNumber()">Reverse</button>
+  <p id="result"></p>
+
+  <script>
+    function reverseNumber() {
+      let num = document.getElementById("numberInput").value;
+      let reversed = parseInt(num.toString().split('').reverse().join(''));
+      document.getElementById("result").innerText = "Reversed Number: " + reversed;
+    }
+  </script>
+
+</body>
+</html>
+
+Q2. Write a Kotlin application to accept the details of Employee (Eno, Ename, Salary) and
+display it.
+
+fun main() {
+    print("Enter Employee Number: ")
+    val eno = readLine()?.toIntOrNull() ?: 0
+
+    print("Enter Employee Name: ")
+    val ename = readLine() ?: ""
+
+    print("Enter Employee Salary: ")
+    val salary = readLine()?.toDoubleOrNull() ?: 0.0
+
+    println("\n--- Employee Details ---")
+    println("Employee Number: $eno")
+    println("Employee Name: $ename")
+    println("Employee Salary: $salary")
+}
+
+
+slip 2
+
+Q1. Write a javascript code to validate given name, if it is invalid then display the message
+“Name is Invalid” otherwise display it by using alert() dialog box. [15 Marks]\
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Validation</title>
+</head>
+<body>
+
+  <h2>Enter Your Name:</h2>
+  <input type="text" id="nameInput" placeholder="Enter name">
+  <button onclick="validateName()">Submit</button>
+  <p id="message" style="color:red;"></p>
+
+  <script>
+    function validateName() {
+      let name = document.getElementById("nameInput").value.trim();
+      let namePattern = /^[A-Za-z\s]+$/;
+
+      if (name === "" || !namePattern.test(name)) {
+        document.getElementById("message").innerText = "Name is Invalid";
+      } else {
+        alert("Hello, " + name);
+        document.getElementById("message").innerText = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+Q2. Write a HTML-CSS script to display image at the background of web page.]
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Image</title>
+  <style>
+    body {
+      background-image: nature.jpg /* Replace with your image file name */
+      background-size;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      margin: 5;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="color:blue; text-align:center; padding-top:20%;">Welcome to My Web Page</h1>
+
+</body>
+</html>
+
+slip 3
+
+Q1. Write a PHP script to validate PAN Number. [15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PAN Number Validator</title>
+</head>
+<body>
+
+<h2>Validate PAN Number</h2>
+
+<form method="POST" action="">
+    Enter PAN Number: <input type="text" name="pan" required>
+    <input type="submit" value="Validate">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $pan = strtoupper(trim($_POST["pan"]));
+    $pattern = "/^[A-Z]{5}[0-9]{4}[A-Z]$/";
+    if (preg_match($pattern, $pan)) {
+        echo "<p style='color: green;'>✅ Valid PAN Number: $pan</p>";
+    } else {
+        echo "<p style='color: red;'>❌ Invalid PAN Number: $pan</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+
+Q2. Write HTML script for the following:
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+    <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            width: 250px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan = "2">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td rowspan="2" colspan="1">5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td rowspan="2">11</td>
+            <td>12</td>
+            <td colspan="2">13</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+slip 4
+
+Q1. Write a PHP script to validate Mobile Number. [15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+
+<h2>Validate Mobile Number</h2>
+
+<form method="POST" action="">
+    Enter Mobile Number: <input type="text" name="mobile" required>
+    <input type="submit" value="Validate">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $mobile = trim($_POST["mobile"]);
+    $pattern = "/^[789][0-9]{9}$/";
+
+    if (preg_match($pattern, $mobile)) {
+        echo "<p style='color: green;'>✅ Valid Mobile Number: $mobile</p>";
+    } else {
+        echo "<p style='color: red;'>❌ Invalid Mobile Number: $mobile</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+Q2. Write a javascript code to accept Ename from user and display it on same web page. (Use <div>)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Employee Name</title>
+</head>
+<body>
+
+<h2>Enter Employee Name</h2>
+
+<input type="text" id="ename" placeholder="Enter Ename">
+<button onclick="displayName()">Submit</button>
+
+<div id="output" style="margin-top: 20px; font-weight: bold;"></div>
+
+<script>
+function displayName() {
+    var name = document.getElementById("ename").value;
+    document.getElementById("output").innerHTML = "Employee Name: " + name;
+}
+</script>
+
+</body>
+</html>
+
+slip 5
+
+Q1. Write a PHP script to validate Email ID. [15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+
+<h2>Validate Email ID</h2>
+
+<form method="POST" action="">
+    Enter Email: <input type="text" name="email" required>
+    <input type="submit" value="Validate">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = trim($_POST["email"]);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<p style='color: green;'>✅ Valid Email ID: $email</p>";
+    } else {
+        echo "<p style='color: red;'>❌ Invalid Email ID: $email</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+Q2. Write a javascript code to calculate the sum of first and last digit of a number.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of First and Last Digit</title>
+</head>
+<body>
+
+<h2>Calculate Sum of First and Last Digit</h2>
+
+<input type="number" id="num" placeholder="Enter a number">
+<button onclick="calculateSum()">Calculate</button>
+
+<div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+<script>
+function calculateSum() {
+    var number = document.getElementById("num").value;
+    number = Math.abs(parseInt(number)).toString(); // ensure positive and string
+
+    var firstDigit = parseInt(number[0]);
+    var lastDigit = parseInt(number[number.length - 1]);
+
+    var sum = firstDigit + lastDigit;
+
+    document.getElementById("result").innerHTML = 
+        "First Digit: " + firstDigit + "<br>" +
+        "Last Digit: " + lastDigit + "<br>" +
+        "Sum: " + sum;
+}
+</script>
+
+</body>
+</html>
+slip 6
+
+Q1. Create an HTML page giving information about celebrating Diwali in your country. Use
+Various tags in HTML to give it a pleasant look. It should be having following links:
+a. Clip of Diwali celebration
+b. Photos of Diwali celebration
+c. Information why it is celebrated
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diwali Celebration in India</title>
+</head>
+<body style="font-family: Arial; background-color: #fff8dc; padding: 20px;">
+
+    <h1 style="color: darkorange;">🎆 Diwali - Festival of Lights 🎆</h1>
+
+    <p>Diwali is one of the most important festivals celebrated across India. It symbolizes the victory of light over darkness and good over evil.</p>
+
+    <h2>How We Celebrate</h2>
+    <ul>
+        <li>Decorating homes with diyas and lights</li>
+        <li>Worshipping Goddess Lakshmi</li>
+        <li>Bursting firecrackers</li>
+        <li>Sharing sweets and gifts</li>
+    </ul>
+
+    <h2>Explore More</h2>
+    <p><a href="https://www.youtube.com/watch?v=KJhLQJmB27U" target="_blank">🎥 Clip of Diwali Celebration</a></p>
+    <p><a href="https://www.google.com/search?q=diwali+celebration+photos&tbm=isch" target="_blank">📸 Photos of Diwali Celebration</a></p>
+    <p><a href="https://en.wikipedia.org/wiki/Diwali" target="_blank">ℹ️ Why Diwali is Celebrated</a></p>
+
+</body>
+</html>
+
+Q2. Write a PHP code to check whether given number is Armstrong or not.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Armstrong Number Checker</title>
+</head>
+<body>
+
+<h2>Check Armstrong Number</h2>
+
+<form method="POST" action="">
+    Enter a number: <input type="number" name="number" required>
+    <input type="submit" value="Check">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num = $_POST["number"];
+    $sum = 0;
+    $temp = $num;
+    $n = strlen((string)$num);
+
+    while ($temp > 0) {
+        $digit = $temp % 10;
+        $sum += pow($digit, $n);
+        $temp = (int)($temp / 10);
+    }
+
+    if ($sum == $num) {
+        echo "<p style='color: green;'>✅ $num is an Armstrong Number</p>";
+    } else {
+        echo "<p style='color: red;'>❌ $num is NOT an Armstrong Number</p>";
+    }
+}
+?>
+
+</body>
+</html>
+slip 7
+
+Q1. Write the HTML code which generates the following output.
+List of Programs in College
+a. Arts
+i. B.A.
+ii. M.A.
+b. Commerce
+I. B. Com.
+II. M. Com.
+III. B.B.A.
+c. Science
+1. B. Sc.
+2. M. Sc. (Physics)
+3. M. Sc. (Chemistry)
+d. Computer Science
+o B.Sc. (Computer Science)
+o B.C.A. (Science)
+o B.Sc. (Information Technology)
+o B.Sc. (Cyber and Digital Science)
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Programs in College</title>
+</head>
+<body>
+
+<h2>List of Programs in College</h2>
+
+<ol type="a">
+    <li>Arts
+        <ol type="i">
+            <li>B.A.</li>
+            <li>M.A.</li>
+        </ol>
+    </li>
+    <li>Commerce
+        <ol type="I">
+            <li>B. Com.</li>
+            <li>M. Com.</li>
+            <li>B.B.A.</li>
+        </ol>
+    </li>
+    <li>Science
+        <ol type="1">
+            <li>B. Sc.</li>
+            <li>M. Sc. (Physics)</li>
+            <li>M. Sc. (Chemistry)</li>
+        </ol>
+    </li>
+    <li>Computer Science
+        <ul type="circle">
+            <li>B.Sc. (Computer Science)</li>
+            <li>B.C.A. (Science)</li>
+            <li>B.Sc. (Information Technology)</li>
+            <li>B.Sc. (Cyber and Digital Science)</li>
+        </ul>
+    </li>
+</ol>
+
+</body>
+</html>
+
+Q2. Write a javascript code to accept a String from user and display the vowels from it.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Vowels</title>
+</head>
+<body>
+
+<h2>Enter a String to Extract Vowels</h2>
+
+<input type="text" id="inputStr" placeholder="Enter a string">
+<button onclick="showVowels()">Show Vowels</button>
+
+<div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+<script>
+function showVowels() {
+    let str = document.getElementById("inputStr").value.toLowerCase();
+    let vowels = "";
+
+    for (let i = 0; i < str.length; i++) {
+        if ("aeiou".includes(str[i])) {
+            vowels += str[i] + " ";
+        }
+    }
+
+    if (vowels.length > 0) {
+        document.getElementById("result").innerHTML = "Vowels in the string: " + vowels;
+    } else {
+        document.getElementById("result").innerHTML = "No vowels found.";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
+slip 8
+
+Q1. Write a HTML script to display the following output:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expenditures of a Company</title>
+</head>
+<body>
+
+<h2>Expenditures of a Company (in Lakh Rupees) per Annum Over the given Years.</h2>
+
+<table border="1" cellspacing="0" cellpadding="8">
+    <tr>
+        <th rowspan="2">Year</th>
+        <th colspan="5">Item of Expenditure</th>
+    </tr>
+    <tr>
+        <th>Salary</th>
+        <th>Fuel and Transport</th>
+        <th>Bonus</th>
+        <th>Interest on Loans</th>
+        <th>Taxes</th>
+    </tr>
+    <tr>
+        <td>1998</td>
+        <td>288</td>
+        <td>98</td>
+        <td>3.00</td>
+        <td>23.4</td>
+        <td>83</td>
+    </tr>
+    <tr>
+        <td>1999</td>
+        <td>342</td>
+        <td>112</td>
+        <td>2.52</td>
+        <td>32.5</td>
+        <td>108</td>
+    </tr>
+    <tr>
+        <td>2000</td>
+        <td>324</td>
+        <td>101</td>
+        <td>3.84</td>
+        <td>41.6</td>
+        <td>74</td>
+    </tr>
+    <tr>
+        <td>2001</td>
+        <td>336</td>
+        <td>133</td>
+        <td>3.68</td>
+        <td>36.4</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>2002</td>
+        <td>420</td>
+        <td>142</td>
+        <td>3.96</td>
+        <td>49.4</td>
+        <td>98</td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+Q2. Write a PHP code to check whether given string palindrome or not.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Checker</title>
+</head>
+<body>
+
+<h2>Check if a String is a Palindrome</h2>
+
+<form method="POST" action="">
+    Enter a string: <input type="text" name="inputStr" required>
+    <input type="submit" value="Check">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $original = strtolower(str_replace(' ', '', $_POST["inputStr"]));
+    $reversed = strrev($original);
+
+    if ($original == $reversed) {
+        echo "<p style='color: green;'>✅ The given string is a Palindrome.</p>";
+    } else {
+        echo "<p style='color: red;'>❌ The given string is NOT a Palindrome.</p>";
+    }
+}
+?>
+
+</body>
+</html>
+slip 9
+
+Q1. Create HTML page with following specifications:
+i. Title should be about your State.
+ii. Color the background by Pink color.
+iii. Place your state name at the top of page in large text and in blue color.
+iv. Add names of popular places in your state, each in different color, style and font.
+v. Add scrolling text about your state specialty.
+(Use inline CSS to format the web page)
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maharashtra</title>
+</head>
+<body style="background-color: pink;">
+
+    <h1 style="color: blue; font-size: 40px; text-align: center;">Maharashtra</h1>
+
+    <h2 style="color: darkgreen; font-family: Verdana;">Mumbai</h2>
+    <h2 style="color: brown; font-family: Georgia;">Pune</h2>
+    <h2 style="color: purple; font-family: 'Comic Sans MS';">Nashik</h2>
+    <h2 style="color: teal; font-family: Arial;">Aurangabad</h2>
+    <h2 style="color: crimson; font-family: Tahoma;">Nagpur</h2>
+
+    <marquee style="color: red; font-size: 20px;">
+        Maharashtra is known for its rich culture, Bollywood, historical forts, and delicious food!
+    </marquee>
+
+</body>
+</html>
+
+
+Q2. Write a Kotlin program to calculate the factorial of a given number. (Use Function)
+
+fun factorial(num: Int): Long {
+    var result: Long = 1
+    for (i in 1..num) {
+        result *= i
+    }
+    return result
+}
+
+fun main() {
+    print("Enter a number: ")
+    val input = readLine()?.toIntOrNull()
+
+    if (input != null && input >= 0) {
+        val fact = factorial(input)
+        println("Factorial of $input is: $fact")
+    } else {
+        println("Please enter a valid non-negative integer.")
+    }
+}
+slip 10
+
+Q1. Write the HTML code which generates the following output (Use CSS)
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: red;
+            text-align: center;
+        }
+        form {
+            width: 400px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin: 4px 0;
+        }
+        textarea {
+            height: 60px;
+        }
+        .gender {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .btn {
+            text-align: center;
+            padding-top: 10px;
+        }
+        .btn input {
+            padding: 5px 15px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align:center;">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995526.png" width="50" height="50" alt="icon">
+    </div>
+
+    <h2>Employee Registration Form</h2>
+
+    <form>
+        <div class="gender">
+            <input type="radio" name="title" value="Mr."> Mr.
+            <input type="radio" name="title" value="Mrs."> Mrs.
+        </div>
+
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" placeholder="First Name"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" placeholder="Last Name"></td>
+            </tr>
+            <tr>
+                <td>Mail Address1</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Mail Address2</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select>
+                        <option>Gujarat</option>
+                        <option>Maharashtra</option>
+                        <option>Karnataka</option>
+                        <option>Punjab</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Zip</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Upload Photo</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td>Mobile</td>
+                <td><input type="tel" placeholder="+91"></td>
+            </tr>
+            <tr>
+                <td>Languages known</td>
+                <td>
+                    <input type="checkbox"> Gujarati<br>
+                    <input type="checkbox"> Hindi<br>
+                    <input type="checkbox"> English<br>
+                    <input type="checkbox"> Marathi
+                </td>
+            </tr>
+            <tr>
+                <td>Additional Information</td>
+                <td><textarea placeholder="Optional"></textarea></td>
+            </tr>
+        </table>
+
+        <div class="btn">
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+        </div>
+    </form>
+
+</body>
+</html>
+
+Q2. Write a Kotlin application to check whether given number is prime or not (Use Function)
+
+
+fun isPrime(number: Int): Boolean {
+    if (number <= 1) return false
+    for (i in 2..number / 2) {
+        if (number % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+
+fun main() {
+    print("Enter a number: ")
+    val input = readLine()?.toIntOrNull()
+
+    if (input != null) {
+        if (isPrime(input)) {
+            println("$input is a Prime number.")
+        } else {
+            println("$input is NOT a Prime number.")
+        }
+    } else {
+        println("Please enter a valid integer.")
+    }
+}
+
+slip 11
+
+Q1. Write HTML code to design a website for Online Shopping. Design home page which
+consist of list of items each with hyperlink, clicking on which should display related
+information on separate web page. (Use external CSS to format each web page).
+
+
+<<<< index.html >>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Shopping - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Online Shopping</h1>
+    <p>Click on an item to view details</p>
+  </header>
+
+  <main>
+    <ul class="item-list">
+      <li><a href="item1.html">Smartphone</a></li>
+      <li><a href="item2.html">Laptop</a></li>
+      <li><a href="item3.html">Headphones</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Online Shopping</p>
+  </footer>
+</body>
+</html>
+
+
+<<<<< item1.html >>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smartphone - Online Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Smartphone</h1>
+  </header>
+
+  <main>
+    <p>The latest smartphone with 5G support, 128GB storage, and high-quality camera.</p>
+    <a href="index.html">← Back to Home</a>
+  </main>
+</body>
+</html>
+
+
+<<<< item2.html >>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laptop - Online Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Laptop</h1>
+  </header>
+
+  <main>
+    <p>Powerful laptop with Intel i7 processor, 16GB RAM, and 512GB SSD.</p>
+    <a href="index.html">← Back to Home</a>
+  </main>
+</body>
+</html>
+
+
+
+<<<< item3.html >>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Headphones - Online Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Headphones</h1>
+  </header>
+
+  <main>
+    <p>Wireless noise-cancelling headphones with long battery life and premium sound.</p>
+    <a href="index.html">← Back to Home</a>
+  </main>
+</body>
+</html>
+
+
+
+<<<<<< style.css >>>>
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.item-list li {
+  margin: 10px 0;
+}
+
+.item-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.item-list a:hover {
+  color: #4CAF50;
+}
+
+main {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ddd;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+
+
+Q2. Design following form in HTML and write a PHP script to display filled information on
+Web page.
+
+
+<<<<form. html>>>>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User OS Form</title>
+</head>
+<body>
+    <form action="display.php" method="POST">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Enter your name</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Select your City</td>
+                <td>
+                    <select name="city">
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nashik">Nashik</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Which Operating System do you have used</strong></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="os[]" value="Windows">Windows
+                    <input type="checkbox" name="os[]" value="Linux">Linux
+                    <input type="checkbox" name="os[]" value="Mac">Mac
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+<<<<<display.php>>>>>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Output</title>
+</head>
+<body>
+    <h2>Entered Information:</h2>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $city = $_POST["city"];
+        $gender = $_POST["gender"];
+        $os = isset($_POST["os"]) ? $_POST["os"] : [];
+
+        echo "<strong>Name:</strong> " . htmlspecialchars($name) . "<br>";
+        echo "<strong>City:</strong> " . htmlspecialchars($city) . "<br>";
+        echo "<strong>Gender:</strong> " . htmlspecialchars($gender) . "<br>";
+
+        echo "<strong>Operating Systems used:</strong> ";
+        if (!empty($os)) {
+            echo implode(", ", $os);
+        } else {
+            echo "None selected";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+slip 12
+
+Q1. Design HTML form to accept two strings and following three options (use radio button).
+Write a PHP script to perform following operations on String.
+a. Compare 2 strings
+b. Convert string into Uppercase
+c. Convert string into Lowercase
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Operations</title>
+</head>
+<body>
+  <h2>String Operations</h2>
+
+  <form method="POST">
+    <label>Enter First String:</label><br>
+    <input type="text" name="str1" required><br><br>
+
+    <label>Enter Second String:</label><br>
+    <input type="text" name="str2" required><br><br>
+
+    <label>Select Operation:</label><br>
+    <input type="radio" name="operation" value="compare" required> Compare Strings<br>
+    <input type="radio" name="operation" value="uppercase"> Convert to Uppercase<br>
+    <input type="radio" name="operation" value="lowercase"> Convert to Lowercase<br><br>
+
+    <input type="submit" name="submit" value="Submit">
+  </form>
+
+  <?php
+  if (isset($_POST['submit'])) {
+    $str1 = $_POST['str1'];
+    $str2 = $_POST['str2'];
+    $operation = $_POST['operation'];
+
+    echo "<h3>Result:</h3>";
+
+    switch ($operation) {
+      case "compare":
+        if ($str1 === $str2) {
+          echo "<p>The strings are <strong>equal</strong>.</p>";
+        } else {
+          echo "<p>The strings are <strong>not equal</strong>.</p>";
+        }
+        break;
+
+      case "uppercase":
+        echo "<p>First String in Uppercase: " . strtoupper($str1) . "</p>";
+        echo "<p>Second String in Uppercase: " . strtoupper($str2) . "</p>";
+        break;
+
+      case "lowercase":
+        echo "<p>First String in Lowercase: " . strtolower($str1) . "</p>";
+        echo "<p>Second String in Lowercase: " . strtolower($str2) . "</p>";
+        break;
+
+      default:
+        echo "<p>Please select a valid operation.</p>";
+    }
+  }
+  ?>
+</body>
+</html>
+
+
+Q2. Write a JavaScript code to calculate the sum of odd digits from a given number using
+function.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Odd Digits</title>
+</head>
+<body>
+  <h2>Calculate Sum of Odd Digits</h2>
+
+  <label>Enter a number:</label>
+  <input type="text" id="numberInput">
+  <button onclick="calculateOddSum()">Calculate</button>
+
+  <p id="result"></p>
+
+  <script>
+    // Function to calculate sum of odd digits
+    function sumOfOddDigits(number) {
+      let sum = 0;
+      for (let digit of number.toString()) {
+        if (!isNaN(digit)) {
+          let d = parseInt(digit);
+          if (d % 2 !== 0) {
+            sum += d;
+          }
+        }
+      }
+      return sum;
+    }
+
+    // Function called on button click
+    function calculateOddSum() {
+      let input = document.getElementById("numberInput").value;
+      if (isNaN(input)) {
+        document.getElementById("result").innerText = "Please enter a valid number!";
+        return;
+      }
+
+      let result = sumOfOddDigits(input);
+      document.getElementById("result").innerText = "Sum of odd digits: " + result;
+    }
+  </script>
+</body>
+</html>
+slip  13
+
+Q1. Write a PHP script to display multiplication table of a given number. [15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication Table</title>
+</head>
+<body>
+  <h2>Multiplication Table Generator</h2>
+  <form method="POST">
+    <label>Enter a Number:</label>
+    <input type="number" name="number" required>
+    <input type="submit" value="Show Table">
+  </form>
+
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num = $_POST['number'];
+    echo "<h3>Multiplication Table of $num</h3>";
+    echo "<ul>";
+    for ($i = 1; $i <= 10; $i++) {
+      $result = $num * $i;
+      echo "<li>$num × $i = $result</li>";
+    }
+    echo "</ul>";
+  }
+  ?>
+</body>
+</html>
+
+
+
+Q2. Write android application using Kotlin to display “My College, My Carrier“ Message on
+Mobile.
+
+<<<<mainactivity.kt>>>
+
+
+
+package com.example.mycollegeapp
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.TextView
+import android.view.Gravity
+import android.graphics.Color
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Create a TextView programmatically
+        val textView = TextView(this)
+        textView.text = "My College, My Carrier"
+        textView.textSize = 28f
+        textView.setTextColor(Color.BLUE)
+        textView.gravity = Gravity.CENTER
+
+        // Set the content view to this TextView
+        setContentView(textView)
+    }
+}
+slip 14
+
+Q1. Write a JavaScript code to validate Pin Code. (Handle OnBlur event) [15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pin Code Validation</title>
+  <style>
+    #pincode {
+      padding: 8px;
+      font-size: 16px;
+    }
+    #message {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Pin Code:</h2>
+  <input type="text" id="pincode" placeholder="Enter 6-digit Pin Code" onblur="validatePinCode()">
+  <p id="message"></p>
+
+  <script>
+    function validatePinCode() {
+      const pinCode = document.getElementById('pincode').value;
+      const message = document.getElementById('message');
+      const pinRegex = /^[1-9][0-9]{5}$/; // Valid Indian Pin Code: 6 digits, cannot start with 0
+
+      if (pinRegex.test(pinCode)) {
+        message.textContent = "Valid Pin Code.";
+        message.style.color = "green";
+      } else {
+        message.textContent = "Invalid Pin Code. Must be 6 digits and not start with 0.";
+        message.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+Q2. Write android application using Kotlin to display Text Message clicking on button.
+
+
+<<<< .xml >>>>
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnShowMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:paddingTop="20dp" />
+</LinearLayout>
+
+
+
+<<<<< .kt >>>>
+
+package com.example.simpleapp
+
+{ import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity } 
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.btnShowMessage)
+        val textView = findViewById<TextView>(R.id.tvMessage)
+
+        button.setOnClickListener {
+            textView.text = "Hello! You clicked the button."
+        }
+    }
+}
+slip 15
+
+Q1. Write a PHP script for the following: Design a form to accept two strings from
+the user.
+a. Find whether the small string appears at the start of the large string.
+b. Find the position of the small string in the big string.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Check</title>
+</head>
+<body>
+
+<h2>String Comparison Form</h2>
+
+<form method="post">
+    Big String: <input type="text" name="bigStr" required><br><br>
+    Small String: <input type="text" name="smallStr" required><br><br>
+    <input type="submit" value="Check">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $bigStr = $_POST['bigStr'];
+    $smallStr = $_POST['smallStr'];
+
+    echo "<h3>Results:</h3>";
+
+    // a. Check if small string appears at the start
+    if (strpos($bigStr, $smallStr) === 0) {
+        echo "✔ The small string appears at the **start** of the big string.<br>";
+    } else {
+        echo "✘ The small string does **not** appear at the start of the big string.<br>";
+    }
+
+    // b. Find position (if exists)
+    $pos = strpos($bigStr, $smallStr);
+    if ($pos !== false) {
+        echo "✔ The small string is found at position: <b>$pos</b> (0-based index).";
+    } else {
+        echo "✘ The small string was not found in the big string.";
+    }
+}
+?>
+
+</body>
+</html>
+
+
+
+
+Q2. Write a HTML – CSS script to accept the details of Student (RollNo, SName, Per) and
+display it in tabular format in red color.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid red;
+            padding: 10px;
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Enter Student Details</h2>
+
+<form onsubmit="displayData(event)">
+    Roll No: <input type="text" id="rollNo" required><br><br>
+    Student Name: <input type="text" id="sName" required><br><br>
+    Percentage: <input type="text" id="per" required><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="result"></div>
+
+<script>
+function displayData(e) {
+    e.preventDefault(); // Prevent form reload
+    const rollNo = document.getElementById("rollNo").value;
+    const sName = document.getElementById("sName").value;
+    const per = document.getElementById("per").value;
+
+    document.getElementById("result").innerHTML = `
+        <h3>Student Details</h3>
+        <table>
+            <tr>
+                <th>Roll No</th>
+                <th>Student Name</th>
+                <th>Percentage</th>
+            </tr>
+            <tr>
+                <td>${rollNo}</td>
+                <td>${sName}</td>
+                <td>${per}</td>
+            </tr>
+        </table>
+    `;
+}
+</script>
+
+</body>
+</html>
+
+slip 16
+
+Q1. Write a PHP script to display all the prime numbers between 1 to100 in blue color.
+[15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers</title>
+</head>
+<body>
+
+<h2>Prime Numbers Between 1 to 100</h2>
+
+<?php
+function isPrime($n) {
+    if ($n < 2) return false;
+    for ($i = 2; $i <= sqrt($n); $i++) {
+        if ($n % $i == 0) return false;
+    }
+    return true;
+}
+
+for ($num = 1; $num <= 100; $num++) {
+    if (isPrime($num)) {
+        echo "<span style='color: blue;'>$num </span>";
+    }
+}
+?>
+
+</body>
+</html>
+
+
+Q2. Write a JavaScript Code to accept Student name and display it in reverse order on same web
+page. (Use <Div>)
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Student Name</title>
+    <script>
+        function reverseName() {
+            let name = document.getElementById("studentName").value;
+            let reversed = name.split("").reverse().join("");
+            document.getElementById("outputDiv").innerHTML = "<b>Reversed Name:</b> " + reversed;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Enter Student Name</h2>
+<input type="text" id="studentName">
+<button onclick="reverseName()">Reverse</button>
+
+<div id="outputDiv" style="margin-top: 10px;"></div>
+
+</body>
+</html>
+
+slip 17
+
+Q1. Write a HTML script to scroll the image right to left continuously on the form. [15 Marks]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrolling Image</title>
+</head>
+<body>
+
+<h2>Scrolling Image (Right to Left)</h2>
+
+<marquee behavior="scroll" direction="left" scrollamount="5">
+    <img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="Scrolling Image" height="400">
+</marquee>
+
+</body>
+</html>
+
+Q2. Write a JavaScript code to display alternate alphabets from a given string.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alternate Alphabets</title>
+    <script>
+        function showAlternateChars() {
+            let input = document.getElementById("inputStr").value;
+            let result = "";
+
+            for (let i = 0; i < input.length; i += 2) {
+                result += input[i];
+            }
+
+            document.getElementById("output").innerText = "Alternate Alphabets: " + result;
+        }
+    </script>
+</head>
+<body>
+
+<h2>Display Alternate Alphabets</h2>
+
+Enter a string: <input type="text" id="inputStr">
+<button onclick="showAlternateChars()">Submit</button>
+
+<p id="output"></p>
+
+</body>
+</html>
+
+slip 18
+
+
+Q1. Write a PHP script to convert given string to uppercase. [15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert to Uppercase</title>
+</head>
+<body>
+
+<h2>Convert String to Uppercase</h2>
+
+<form method="post">
+    Enter a string: <input type="text" name="inputString" required>
+    <input type="submit" value="Convert">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $str = $_POST['inputString'];
+    $upperStr = strtoupper($str);
+    echo "<h3>Result:</h3>";
+    echo "Original String: " . htmlspecialchars($str) . "<br>";
+    echo "Uppercase String: " . htmlspecialchars($upperStr);
+}
+?>
+
+</body>
+</html>
+
+
+
+Q2. Write a Kotlin application to accept the details of College (ID, Name, Est_Year) and display
+it. (Use Function)
+
+
+fun main() {
+    println("Enter College ID:")
+    val id = readLine() ?: ""
+
+    println("Enter College Name:")
+    val name = readLine() ?: ""
+
+    println("Enter Established Year:")
+    val estYear = readLine() ?: ""
+
+    displayCollegeDetails(id, name, estYear)
+}
+
+fun displayCollegeDetails(id: String, name: String, year: String) {
+    println("\n--- College Details ---")
+    println("College ID: $id")
+    println("College Name: $name")
+    println("Established Year: $year")
+}
+
+slip 19
+
+19
+Q1. Write a HTML script to develop simple static website for college admission system
+(Use <frameset> and <a> tag) [15 Marks]
+
+
+<<< index.html >>>>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>College Admission System</title>
+</head>
+<frameset rows="20%,80%">
+  <frame src="header.html" name="headerFrame">
+  <frameset cols="25%,75%">
+    <frame src="menu.html" name="menuFrame">
+    <frame src="home.html" name="contentFrame">
+  </frameset>
+</frameset>
+</html>
+
+<<<< header.html >>>
+
+<!DOCTYPE html>
+<html>
+<head><title>Header</title></head>
+<body style="background-color:#3366cc; color:white; text-align:center;">
+  <h1>ABC College Admission System</h1>
+</body>
+</html>
+
+
+<<<< menu.html >>>>
+
+<!DOCTYPE html>
+<html>
+<head><title>Menu</title></head>
+<body style="background-color:#eeeeee;">
+  <h3>Navigation</h3>
+  <a href="home.html" target="contentFrame">Home</a><br><br>
+  <a href="about.html" target="contentFrame">About Us</a><br><br>
+  <a href="courses.html" target="contentFrame">Courses</a><br><br>
+  <a href="admission.html" target="contentFrame">Admission</a><br><br>
+  <a href="contact.html" target="contentFrame">Contact</a>
+</body>
+</html>
+
+
+<<<< home.html >>>>
+
+<!DOCTYPE html>
+<html>
+<head><title>Home</title></head>
+<body>
+  <h2>Welcome to ABC College</h2>
+  <p>This portal provides details about our admission process and courses offered.</p>
+</body>
+</html>
+
+<<<<< courses.html >>>>>
+
+<!DOCTYPE html>
+<html>
+<head><title>Courses</title></head>
+<body>
+  <h2>Courses Offered</h2>
+  <ul>
+    <li>B.Sc. in Computer Science</li>
+    <li>B.Com.</li>
+    <li>B.A.</li>
+    <li>BBA</li>
+    <li>BCA</li>
+  </ul>
+</body>
+</html>
+
+
+<<<<<< admission.html >>>>>
+
+
+<!DOCTYPE html>
+<html>
+<head><title>Admission</title></head>
+<body>
+  <h2>Admission Process</h2>
+  <p>Admissions open from June 1st. Apply through the official portal or visit our campus.</p>
+</body>
+</html>
+
+
+
+<<<<<contact.html >>>>
+
+
+<!DOCTYPE html>
+<html>
+<head><title>Contact</title></head>
+<body>
+  <h2>Contact Us</h2>
+  <p>Email: info@abccollege.edu</p>
+  <p>Phone: 0123-456789</p>
+</body>
+</html>
+
+
+Q2. Write a PHP script to accept the details of Voter (ID, Name, Constituency) and display it on
+same page in tabular format.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voter Details</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Enter Voter Details</h2>
+<form method="post">
+  Voter ID: <input type="text" name="voter_id" required><br><br>
+  Name: <input type="text" name="name" required><br><br>
+  Constituency: <input type="text" name="constituency" required><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $voter_id = htmlspecialchars($_POST["voter_id"]);
+  $name = htmlspecialchars($_POST["name"]);
+  $constituency = htmlspecialchars($_POST["constituency"]);
+
+  echo "<h3>Voter Information</h3>";
+  echo "<table>
+          <tr><th>ID</th><th>Name</th><th>Constituency</th></tr>
+          <tr><td>$voter_id</td><td>$name</td><td>$constituency</td></tr>
+        </table>";
+}
+?>
+
+</body>
+</html>
+
+slip 20
+
+Q1. Write a JavaScript code to wish user according to the current time of a system.
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time-Based Greeting</title>
+    <script>
+        function greetUser() {
+            let greeting;
+            let hour = new Date().getHours();
+
+            if (hour < 12) {
+                greeting = "Good Morning!";
+            } else if (hour < 17) {
+                greeting = "Good Afternoon!";
+            } else if (hour < 20) {
+                greeting = "Good Evening!";
+            } else {
+                greeting = "Good Night!";
+            }
+
+            document.getElementById("greeting").innerText = greeting;
+        }
+
+        // Call the function when the page loads
+        window.onload = greetUser;
+    </script>
+</head>
+<body>
+    <h2>JavaScript Greeting Based on Time</h2>
+    <p id="greeting" style="font-size: 24px; font-weight: bold;"></p>
+</body>
+</html>
+
+
+
+Q2. Write a PHP code to check whether given number is palindrome or not. Display the result in
+red color
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome Check</title>
+</head>
+<body>
+
+<h2>Check Palindrome Number</h2>
+
+<form method="post">
+    Enter a number: <input type="text" name="number" required>
+    <input type="submit" value="Check">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num = $_POST['number'];
+    $rev = strrev($num);
+
+    if ($num == $rev) {
+        echo "<p style='color: red;'>$num is a Palindrome</p>";
+    } else {
+        echo "<p style='color: red;'>$num is NOT a Palindrome</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+slip 21
+
+Q1. Write a javascript code to calculate the sum of even digits of a given number. [15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Even Digits</title>
+    <script>
+        function calculateEvenSum() {
+            let num = document.getElementById("number").value;
+            let sum = 0;
+
+            for (let i = 0; i < num.length; i++) {
+                let digit = parseInt(num.charAt(i));
+                if (!isNaN(digit) && digit % 2 === 0) {
+                    sum += digit;
+                }
+            }
+
+            document.getElementById("result").innerText = "Sum of even digits: " + sum;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Calculate Sum of Even Digits</h2>
+    <input type="text" id="number" placeholder="Enter a number">
+    <button onclick="calculateEvenSum()">Calculate</button>
+    <p id="result"></p>
+
+</body>
+</html>
+
+
+Q2. Write a PHP script to validate Email ID. 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+
+<h2>Validate Email ID</h2>
+
+<form method="post">
+    Enter Email: <input type="text" name="email" required>
+    <input type="submit" value="Validate">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<p style='color: green;'>Valid Email: $email</p>";
+    } else {
+        echo "<p style='color: red;'>Invalid Email Format</p>";
+    }
+}
+?>
+
+</body>
+</html>
+
+slip 22
+
+
+Q1. Create an HTML page giving information about celebrating Diwali in your country. Use
+Various tags in HTML to give it a pleasant look. It should be having following links:
+a. Clip of Diwali celebration
+b. Photos of Diwali celebration
+c. Information why it is celebrated
+[15 Marks]
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diwali Celebration in India</title>
+    <style>
+        body {
+            background-color: #fff8dc;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #e67300;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            color: #0077cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Diwali - The Festival of Lights</h1>
+
+    <p>Diwali, also known as Deepavali, is one of the most important festivals celebrated across India. It marks the victory of light over darkness and good over evil.</p>
+
+    <div class="links">
+        <h2>Explore More:</h2>
+        <a href="https://www.youtube.com/watch?v=clip_id" target="_blank">🎥 Clip of Diwali Celebration</a>
+        <a href="https://www.google.com/search?q=diwali+celebration+photos&tbm=isch" target="_blank">📸 Photos of Diwali Celebration</a>
+        <a href="#why">📚 Why Diwali is Celebrated</a>
+    </div>
+
+    <hr>
+
+    <h2 id="why">Why is Diwali Celebrated?</h2>
+    <p>
+        Diwali is celebrated for several reasons across different parts of India:
+        <ul>
+            <li>In North India, it marks the return of Lord Rama to Ayodhya after defeating Ravana.</li>
+            <li>In Western India, it's the day Lord Vishnu sent the demon King Bali to the nether world.</li>
+            <li>In Eastern India, Goddess Kali is worshipped.</li>
+            <li>In Southern India, it commemorates the victory of Lord Krishna over Narakasura.</li>
+        </ul>
+    </p>
+
+</body>
+</html>
+
+
+
+Q2. Write a PHP script to change initial character of each word from a given string to uppercase.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitalize Each Word</title>
+</head>
+<body>
+
+<h2>Capitalize First Letter of Each Word</h2>
+
+<form method="post">
+    Enter a string: <input type="text" name="inputString" required>
+    <input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the input string from the form
+    $input = $_POST['inputString'];
+
+    // Convert to Title Case
+    $capitalized = ucwords($input);
+
+    // Display the results
+    echo "<h3>Result:</h3>";
+    echo "Original: " . htmlspecialchars($input) . "<br>";
+    echo "Capitalized: " . htmlspecialchars($capitalized);
+}
+?>
+
+</body>
+</html>
+
+slip 23
+
+Q1. Design following form in HTML and write a PHP script to display filled information on
+Web page.
+
+
+
+<<<<< index.html >>>>>>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OS and City Form</title>
+</head>
+<body>
+    <h2>Enter Your Details</h2>
+    <form action="display.php" method="POST">
+        <table border="1" cellpadding="8">
+            <tr>
+                <td>Enter your name</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+
+            <tr>
+                <td>Select your City</td>
+                <td>
+                    <select name="city">
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><strong>Which Operating System do you have used?</strong></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="os[]" value="Windows"> Windows
+                    <input type="checkbox" name="os[]" value="Linux"> Linux
+                    <input type="checkbox" name="os[]" value="Mac"> Mac
+                </td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="Male" required> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
+
+<<<<<< display.php >>>>>
+
+
+<?php
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $city = $_POST['city'];
+    $gender = $_POST['gender'];
+    // Handle OS array (if no checkbox is selected, $_POST['os'] might be undefined)
+    $os = isset($_POST['os']) ? $_POST['os'] : [];
+
+    echo "<h2>Filled Information:</h2>";
+    echo "<table border='1' cellpadding='8'>";
+    echo "<tr><th>Name</th><td>" . htmlspecialchars($name) . "</td></tr>";
+    echo "<tr><th>City</th><td>" . htmlspecialchars($city) . "</td></tr>";
+    echo "<tr><th>Operating System(s) Used</th><td>";
+    if (!empty($os)) {
+        // Join multiple OS values into one string
+        echo implode(", ", array_map('htmlspecialchars', $os));
+    } else {
+        echo "No OS selected";
+    }
+    echo "</td></tr>";
+    echo "<tr><th>Gender</th><td>" . htmlspecialchars($gender) . "</td></tr>";
+    echo "</table>";
+} else {
+    // If someone directly visits display.php without form submission:
+    echo "<p>No data received. Please go back and submit the form.</p>";
+}
+?>
+
+
+
+Q2. Write a PHP code to check whether given number is Armstrong or not.
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Armstrong Number Check</title>
+</head>
+<body>
+    <h2>Check if a Number is Armstrong</h2>
+    <form method="POST">
+        <label>Enter a number: </label>
+        <input type="number" name="number" required>
+        <input type="submit" value="Check">
+    </form>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the number from the form
+        $number = $_POST['number'];
+        $sum = 0;
+        $temp = $number;
+        // Calculate the number of digits in the number
+        $numDigits = strlen($number);
+        
+        // Process each digit
+        while ($temp > 0) {
+            $digit = $temp % 10;
+            // Raise the digit to the power of the number of digits
+            $sum += pow($digit, $numDigits);
+            $temp = floor($temp / 10);
+        }
+        
+        // Display the result based on the Armstrong condition
+        if ($sum == $number) {
+            echo "<p>$number is an Armstrong number.</p>";
+        } else {
+            echo "<p>$number is not an Armstrong number.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+
+slip 24
+
+Q1. Write a javascript code to calculate the sum of first and last digit of a number (Handle
+onBlur event)
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>First and Last Digit Sum</title>
+  <script>
+    function sumFirstLast() {
+      let numStr = document.getElementById("number").value.trim();
+      let result = document.getElementById("result");
+
+      if (/^\d+$/.test(numStr)) {
+        let firstDigit = parseInt(numStr.charAt(0));
+        let lastDigit = parseInt(numStr.charAt(numStr.length - 1));
+        let sum = firstDigit + lastDigit;
+
+        result.textContent = "Sum of first and last digit: " + sum;
+      } else {
+        result.textContent = "Please enter a valid number";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Calculate Sum of First and Last Digit</h2>
+  <label>Enter a number:</label>
+  <input type="text" id="number" onblur="sumFirstLast()">
+  <p id="result"></p>
+</body>
+</html>
+
+
+Q2. Write a PHP script to accept the details of Voter (ID, Name, Constituency) and display it on
+same page in tabular format.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Voter Details</title>
+</head>
+<body>
+  <h2>Enter Voter Details</h2>
+  <form method="POST">
+    <label>Voter ID:</label>
+    <input type="text" name="voter_id" required><br><br>
+
+    <label>Name:</label>
+    <input type="text" name="name" required><br><br>
+
+    <label>Constituency:</label>
+    <input type="text" name="constituency" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <?php
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $id = $_POST["voter_id"];
+    $name = $_POST["name"];
+    $constituency = $_POST["constituency"];
+
+    echo "<h3>Voter Details:</h3>";
+    echo "<table border='1' cellpadding='10'>
+            <tr>
+              <th>Voter ID</th>
+              <th>Name</th>
+              <th>Constituency</th>
+            </tr>
+            <tr>
+              <td>$id</td>
+              <td>$name</td>
+              <td>$constituency</td>
+            </tr>
+          </table>";
+  }
+  ?>
+</body>
+</html>
+
+slip 25
+
+Q1. Write a JavaScript code to validate Pin Code. (Handle OnBlur event) [15 Marks]
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pin Code Validation</title>
+  <script>
+    function validatePin() {
+      const pin = document.getElementById("pin").value;
+      const message = document.getElementById("pinMessage");
+
+      if (/^\d{6}$/.test(pin)) {
+        message.textContent = "Valid Pin Code";
+        message.style.color = "green";
+      } else {
+        message.textContent = "Invalid Pin Code (Must be 6 digits)";
+        message.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Pin Code Validation</h2>
+  <label>Enter Pin Code:</label>
+  <input type="text" id="pin" onblur="validatePin()">
+  <p id="pinMessage"></p>
+</body>
+</html>
+
+
+Q2. Write a javascript code to validate given name, if it is invalid then display the message
+“Name is Invalid” otherwise display it by using alert() dialog box.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Name Validation</title>
+  <script>
+    function validateName() {
+      const name = document.getElementById("name").value;
+      const nameMessage = document.getElementById("nameMessage");
+
+      if (/^[A-Za-z ]+$/.test(name)) {
+        alert("Valid Name: " + name);
+        nameMessage.textContent = "";
+      } else {
+        nameMessage.textContent = "Name is Invalid";
+        nameMessage.style.color = "red";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Name Validation</h2>
+  <label>Enter Name:</label>
+  <input type="text" id="name">
+  <button onclick="validateName()">Check Name</button>
+  <p id="nameMessage"></p>
+</body>
+</html>
